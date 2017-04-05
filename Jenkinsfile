@@ -16,8 +16,8 @@ pipeline {
           withCredentials([usernamePassword(
                 credentialsId: 'awsplatkeys', passwordVariable: 'aws_secret_key', usernameVariable: 'aws_access_key')]) {
                 sh '''
-                	sed -i 's/env_aws_access_key/"$aws_access_key"/g'  variables.tf
-                	sed -i 's/env_aws_secret_key/"$aws_secret_key"/g'  variables.tf
+                	sed -i 's/env_aws_access_key/'"$aws_access_key"'/g'  variables.tf
+                	sed -i 's/env_aws_secret_key/'"$aws_secret_key"'/g'  variables.tf
                 '''
                 }          	  
             }
