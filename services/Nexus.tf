@@ -4,8 +4,8 @@ provider "aws" {
   region = "${var.aws_region}"
 }
 
-resource "aws_security_group" "JenkinsSG" {
-  name        = "JenkinsServer-sg"
+resource "aws_security_group" "nexusSG" {
+  name        = "Nexus-sg"
   description = "Used in the terraform"
 
   # SSH access from anywhere
@@ -47,8 +47,8 @@ resource "aws_security_group" "JenkinsSG" {
 resource "aws_instance" "jenkins" {
   ami 				= "${lookup(var.aws_amis, var.aws_region)}"
   instance_type     = "t2.micro"
-  security_groups   = ["${aws_security_group.JenkinsSG.name}"]
-  user_data         = "${file("userdata.sh")}"
+  security_groups   = ["${aws_security_group.nexusSG.name}"]
+  user_data         = "${file("userdataNexus.sh")}"
   key_name 			= "devopsio"
   tags {
     Name            = "Jenkins"
