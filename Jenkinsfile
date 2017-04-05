@@ -37,6 +37,9 @@ pipeline {
           		ls -lah
           		ls -lah services/
           		./terraform show
+          		git add .
+          		git commit -m "updated the platform state"
+          		git push
           '''
         }
       }
