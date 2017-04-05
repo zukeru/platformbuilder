@@ -36,10 +36,7 @@ pipeline {
           		./terraform apply -state=/tmp/terraform.tfstate -refresh=true services/.
           		ls -lah
           		ls -lah services/
-          		./terraform show
-          		git add .
-				git commit -m 'reinitialized files'
-				git push origin master --force
+          		./terraform show /tmp/terraform.tfstate
           '''
         }
       }
