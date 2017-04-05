@@ -6,6 +6,10 @@
       pollSCM("")
     }
 
+    tools {
+      jdk "jdk1.8"
+    }
+
     parameters {
       string(name: 'PHASE', defaultValue: 'DEPLOY', description: 'Build Stage to Execute')
     }
