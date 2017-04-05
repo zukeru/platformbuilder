@@ -33,8 +33,8 @@ pipeline {
           		ls -lah
           		unzip terraform.zip
           		cat services/variables.tf
-          		services/terraform apply .
-          		services/terraform show
+          		./terraform apply services/.
+          		./terraform show services/.
           '''
         }
       }
