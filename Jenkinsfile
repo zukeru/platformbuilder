@@ -32,8 +32,8 @@ pipeline {
           		#!/bin/bash
 
           		unzip terraform.zip
-          		./terraform destroy --force
-          		./terraform apply services/.
+          		./terraform destroy --force -state=/tmp/terraform.tfstate services/.
+          		./terraform apply -state=/tmp/terraform.tfstate -refresh=true services/.
           		ls -lah
           		ls -lah services/
           		./terraform show
