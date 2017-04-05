@@ -30,11 +30,13 @@ pipeline {
           branch "master"
           sh '''
           		#!/bin/bash
-          		ls -lah
+
           		unzip terraform.zip
           		cat services/variables.tf
           		./terraform apply services/.
-          		./terraform show services/.
+          		ls -lah
+          		ls -lah services/
+          		./terraform show
           '''
         }
       }
