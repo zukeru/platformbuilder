@@ -44,14 +44,14 @@ resource "aws_security_group" "nexusSG" {
 
 
 
-resource "aws_instance" "jenkins" {
+resource "aws_instance" "Nexus" {
   ami 				= "${lookup(var.aws_amis, var.aws_region)}"
   instance_type     = "t2.micro"
   security_groups   = ["${aws_security_group.nexusSG.name}"]
   user_data         = "${file("services/userdataNexus.sh")}"
   key_name 			= "devopsio"
   tags {
-    Name            = "Jenkins"
+    Name            = "Nexus"
   }
 }
 
