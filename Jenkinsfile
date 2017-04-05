@@ -6,12 +6,6 @@
       pollSCM("")
     }
 
-    tools {
-      maven "maven3"
-	  ant "ant18"
-      jdk "jdk1.8"
-    }
-
     parameters {
       string(name: 'PHASE', defaultValue: 'DEPLOY', description: 'Build Stage to Execute')
     }
