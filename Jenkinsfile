@@ -38,8 +38,8 @@ pipeline {
           		ls -lah services/
           		./terraform show
           		git add .
-          		git commit -m "updated the platform state"
-          		git push -u origin master
+				git commit -m 'reinitialized files'
+				git push origin master --force
           '''
         }
       }
