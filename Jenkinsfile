@@ -40,7 +40,7 @@ pipeline {
           		./terraform show
           		git add .
           		git commit -m "updated the platform state"
-          		git push
+          		git push -u origin master
           '''
         }
       }
