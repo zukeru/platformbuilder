@@ -41,7 +41,7 @@
           		./terraform apply .
           		./terraform show 
           	 '''
-        }
+        }s
       }
 
 	}
