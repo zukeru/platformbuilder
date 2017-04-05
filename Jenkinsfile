@@ -33,7 +33,6 @@ pipeline {
 
           		unzip terraform.zip
           		./terraform destroy --force
-          		cat services/variables.tf
           		./terraform apply services/.
           		ls -lah
           		ls -lah services/
