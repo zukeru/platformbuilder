@@ -55,7 +55,7 @@ resource "aws_security_group" "nexusSG" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
+}
 
 
 resource "aws_instance" "Nexus" {
