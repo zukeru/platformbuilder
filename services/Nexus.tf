@@ -24,6 +24,22 @@ resource "aws_security_group" "nexusSG" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+#HTTPS
+ ingress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+#HTTP*
+ ingress {
+    from_port   = 8080
+    to_port     = 8080
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   # HTTP access from anywhere
   ingress {
     from_port   = 8081
@@ -39,8 +55,6 @@ resource "aws_security_group" "nexusSG" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-}
-
 
 
 
